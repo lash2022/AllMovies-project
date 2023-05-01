@@ -1,0 +1,41 @@
+.container{
+    background-color: black;
+    color: #fff;
+    height:130px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: top;
+    .f-col{
+        .header__logo{
+            width: 112px;
+            height: 35px;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+    }
+    }
+
+    .s-col{
+        width: 650px;
+
+        ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: left;
+            list-style: none;
+            padding-left: 0;
+            padding-right: 110px;
+        }
+    }
+
+    .th-col{
+        width: 300px;
+        height: 85px;
+    }
+    
+
+}

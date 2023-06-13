@@ -1,0 +1,9 @@
+:host {
+  height: 2500px;
+
+  .wrapper {
+    width: calc(100% - 125px);
+    margin-left: 125px;
+    margin-bottom: 25px;
+  }
+}

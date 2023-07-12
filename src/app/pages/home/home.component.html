@@ -1,1 +1,25 @@
-<app-slider/>
+<app-slider [popularMovies]="topMovie()" [carousel]="trendingMoviesTmpl"/>
+<ng-template #trendingMoviesTmpl>
+  <app-list-card title="TRENDING" [movies]="trendingMovies() || []" [autoplay]="true">
+    <ng-template #headerBtn>
+      <button class="show-all" (click)="searchMovies('trending')">Show all</button>
+    </ng-template>
+  </app-list-card>
+</ng-template>
+<div class="wrapper" queryParamsHandling="merge">
+  <app-list-card title="RECOMMENDED FOR YOU" [movies]="trendingMovies() || []">
+    <ng-template #headerBtn>
+      <button class="show-all" (click)="searchMovies('recommended')">Show all</button>
+    </ng-template>
+  </app-list-card>
+  <app-list-card title="LATEST" [movies]="trendingMovies() || []">
+    <ng-template #headerBtn>
+      <button class="show-all">Show all</button>
+    </ng-template>
+  </app-list-card>
+  <app-list-card title="COMING SOON" [movies]="trendingMovies() || []">
+    <ng-template #headerBtn>
+      <button class="show-all">Show all</button>
+    </ng-template>
+  </app-list-card>
+</div>

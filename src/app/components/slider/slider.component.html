@@ -1,4 +1,24 @@
-<div class="poster"
-  [style.background-image]="'url(' + image + ')'">
-</div>
+<ng-container >
+  <div class="poster"
+       [style.background-image]="'url('+ ( movie.backdrop_path) + ')'">
+
+  </div>
+  <div class="gradient">
+    <div class="movie_info">
+      <div class="title">{{movie.original_title}}</div>
+      <div class="description">{{movie.overview}}</div>
+      <div class="rating">
+        <img src="./assets/images/star.png" alt="star" width="20px">
+        {{movie.vote_average}}
+      </div>
+      <div class="actions">
+        <div app-button [backgroundColor]="'#5436A9'" >Watch <img src="assets/images/Vector.png" alt="vector"></div>
+        <div app-button [backgroundColor]="'#5C5C5C'">My List <img src="assets/images/+.png" alt="+"></div>
+      </div>
+    </div>
+  </div>
+  <div class="carousel" *ngIf="carousel">
+    <ng-container *ngTemplateOutlet="carousel"></ng-container>
+  </div>
+</ng-container>
 

@@ -1,1 +1,2 @@
-export * from './movie';
+export * from './movie.interface'
+export * from './api-response.interface'

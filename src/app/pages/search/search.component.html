@@ -1,1 +1,26 @@
-<p>search works!</p>
+<div class="wrapper">
+  <div class="filter" [formGroup]="filterForm" >
+    <input formControlName="year"/>
+    <select formControlName="with_genres">
+      <option *ngFor="let genre of genres()" [value]="genre.id">{{genre.name}}</option>
+    </select>
+  </div>
+  <div class="movies">
+    <!--<pre>
+      {{movies() | json}}
+    </pre>-->
+
+    <ng-container *ngIf="movies()">
+      <ng-container *ngFor="let movie of movies()">
+        <app-movie-card [movie]="movie"></app-movie-card>
+    </ng-container>
+    </ng-container>
+  </div>
+  <pagination-controls
+    previousLabel="Prev"
+    nextLabel="Next"
+    [maxSize]="9"
+    (pageChange)="onTableDataChange($event)"
+  >
+  </pagination-controls>
+</div>
